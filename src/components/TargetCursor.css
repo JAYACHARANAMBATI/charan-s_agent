@@ -1,0 +1,131 @@
+/* TargetCursor.css */
+
+.target-cursor-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  width: 0;
+  height: 0;
+  will-change: transform;
+}
+
+.target-cursor-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    0 0 10px rgba(102, 126, 234, 0.6),
+    0 0 20px rgba(102, 126, 234, 0.4),
+    0 0 30px rgba(102, 126, 234, 0.2);
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+
+.target-cursor-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 3px solid transparent;
+  will-change: transform;
+  transition: border-color 0.3s ease;
+}
+
+.target-cursor-corner::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0.8;
+  box-shadow: 
+    0 0 8px rgba(102, 126, 234, 0.6),
+    0 0 12px rgba(118, 75, 162, 0.4);
+}
+
+/* Corner positions (starting position) */
+.corner-tl {
+  transform: translate(-18px, -18px);
+  border-top-width: 3px;
+  border-left-width: 3px;
+}
+
+.corner-tl::before {
+  border-radius: 3px 0 0 0;
+  clip-path: polygon(0 0, 100% 0, 100% 3px, 3px 3px, 3px 100%, 0 100%);
+}
+
+.corner-tr {
+  transform: translate(6px, -18px);
+  border-top-width: 3px;
+  border-right-width: 3px;
+}
+
+.corner-tr::before {
+  border-radius: 0 3px 0 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, calc(100% - 3px) 100%, calc(100% - 3px) 3px, 0 3px);
+}
+
+.corner-br {
+  transform: translate(6px, 6px);
+  border-bottom-width: 3px;
+  border-right-width: 3px;
+}
+
+.corner-br::before {
+  border-radius: 0 0 3px 0;
+  clip-path: polygon(calc(100% - 3px) 0, 100% 0, 100% 100%, 0 100%, 0 calc(100% - 3px), calc(100% - 3px) calc(100% - 3px));
+}
+
+.corner-bl {
+  transform: translate(-18px, 6px);
+  border-bottom-width: 3px;
+  border-left-width: 3px;
+}
+
+.corner-bl::before {
+  border-radius: 0 0 0 3px;
+  clip-path: polygon(0 0, 3px 0, 3px calc(100% - 3px), 100% calc(100% - 3px), 100% 100%, 0 100%);
+}
+
+/* Glow effect on hover */
+.target-cursor-wrapper:hover .target-cursor-dot {
+  box-shadow: 
+    0 0 15px rgba(102, 126, 234, 0.8),
+    0 0 25px rgba(102, 126, 234, 0.6),
+    0 0 35px rgba(102, 126, 234, 0.4);
+}
+
+/* Animation for corners when targeting */
+@keyframes cornerPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.target-cursor-corner.targeting::before {
+  animation: cornerPulse 1.5s ease-in-out infinite;
+}
+
+/* Smooth transitions */
+* {
+  cursor: inherit;
+}
+
+/* Hide default cursor when TargetCursor is active */
+body.cursor-hidden {
+  cursor: none !important;
+}
+
+body.cursor-hidden * {
+  cursor: none !important;
+}
