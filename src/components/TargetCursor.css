@@ -15,13 +15,13 @@
   position: absolute;
   width: 8px;
   height: 8px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #d4c4a0 0%, #c4a676 100%);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 
-    0 0 10px rgba(102, 126, 234, 0.6),
-    0 0 20px rgba(102, 126, 234, 0.4),
-    0 0 30px rgba(102, 126, 234, 0.2);
+    0 0 10px rgba(212, 196, 160, 0.6),
+    0 0 20px rgba(212, 196, 160, 0.4),
+    0 0 30px rgba(212, 196, 160, 0.2);
   will-change: transform;
   transition: all 0.3s ease;
 }
@@ -40,11 +40,11 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #d4c4a0 0%, #c4a676 100%);
   opacity: 0.8;
   box-shadow: 
-    0 0 8px rgba(102, 126, 234, 0.6),
-    0 0 12px rgba(118, 75, 162, 0.4);
+    0 0 8px rgba(212, 196, 160, 0.6),
+    0 0 12px rgba(196, 166, 118, 0.4);
 }
 
 /* Corner positions (starting position) */
@@ -95,9 +95,9 @@
 /* Glow effect on hover */
 .target-cursor-wrapper:hover .target-cursor-dot {
   box-shadow: 
-    0 0 15px rgba(102, 126, 234, 0.8),
-    0 0 25px rgba(102, 126, 234, 0.6),
-    0 0 35px rgba(102, 126, 234, 0.4);
+    0 0 15px rgba(212, 196, 160, 0.8),
+    0 0 25px rgba(212, 196, 160, 0.6),
+    0 0 35px rgba(212, 196, 160, 0.4);
 }
 
 /* Animation for corners when targeting */

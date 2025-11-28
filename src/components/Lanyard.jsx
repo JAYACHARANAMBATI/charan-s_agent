@@ -178,7 +178,7 @@ export default function Lanyard({ position = [0, 0, 20], gravity = [0, -40, 0], 
           <ambientLight intensity={Math.PI} />
           <spotLight position={[10, 10, 10]} angle={0.3} penumbra={1} intensity={2.5} castShadow />
           <spotLight position={[-10, 10, 10]} angle={0.3} penumbra={1} intensity={2} />
-          <pointLight position={[0, 5, 8]} intensity={1.5} color="#667eea" />
+          <pointLight position={[0, 5, 8]} intensity={1.5} color="#d4c4a0" />
           <Physics gravity={gravity} timestep={1 / 60}>
             <Band />
           </Physics>
@@ -610,11 +610,11 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             {/* Decorative Lines - Back */}
             <mesh position={[0, 0.17, -0.016]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[1.2, 0.003, 0.001]} />
-              <meshStandardMaterial color="#667eea" metalness={0.9} roughness={0.1} emissive="#667eea" emissiveIntensity={0.3} />
+              <meshStandardMaterial color="#d4c4a0" metalness={0.9} roughness={0.1} emissive="#d4c4a0" emissiveIntensity={0.3} />
             </mesh>
             <mesh position={[0, -0.2, -0.016]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[1.2, 0.003, 0.001]} />
-              <meshStandardMaterial color="#667eea" metalness={0.9} roughness={0.1} emissive="#667eea" emissiveIntensity={0.3} />
+              <meshStandardMaterial color="#d4c4a0" metalness={0.9} roughness={0.1} emissive="#d4c4a0" emissiveIntensity={0.3} />
             </mesh>
             
             {/* Border Frame - Back Side (Only edges) */}
@@ -622,10 +622,10 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             <mesh position={[0, 1.125, -0.015]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[1.6, 0.02, 0.001]} />
               <meshStandardMaterial 
-                color="#667eea"
+                color="#d4c4a0"
                 metalness={0.9}
                 roughness={0.1}
-                emissive="#667eea"
+                emissive="#d4c4a0"
                 emissiveIntensity={hovered ? 0.6 : 0.4}
               />
             </mesh>
@@ -633,10 +633,10 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             <mesh position={[0, -1.125, -0.015]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[1.6, 0.02, 0.001]} />
               <meshStandardMaterial 
-                color="#667eea"
+                color="#d4c4a0"
                 metalness={0.9}
                 roughness={0.1}
-                emissive="#667eea"
+                emissive="#d4c4a0"
                 emissiveIntensity={hovered ? 0.6 : 0.4}
               />
             </mesh>
@@ -644,10 +644,10 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             <mesh position={[-0.8, 0, -0.015]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[0.02, 2.25, 0.001]} />
               <meshStandardMaterial 
-                color="#667eea"
+                color="#d4c4a0"
                 metalness={0.9}
                 roughness={0.1}
-                emissive="#667eea"
+                emissive="#d4c4a0"
                 emissiveIntensity={hovered ? 0.6 : 0.4}
               />
             </mesh>
@@ -655,10 +655,10 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             <mesh position={[0.8, 0, -0.015]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[0.02, 2.25, 0.001]} />
               <meshStandardMaterial 
-                color="#667eea"
+                color="#d4c4a0"
                 metalness={0.9}
                 roughness={0.1}
-                emissive="#667eea"
+                emissive="#d4c4a0"
                 emissiveIntensity={hovered ? 0.6 : 0.4}
               />
             </mesh>
@@ -666,35 +666,35 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             {/* Corner Accents - Back (mirrored) */}
             <mesh position={[-0.72, 1.05, -0.017]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[0.15, 0.02, 0.001]} />
-              <meshStandardMaterial color="#764ba2" metalness={1} roughness={0} emissive="#764ba2" emissiveIntensity={0.6} />
+              <meshStandardMaterial color="#c4a676" metalness={1} roughness={0} emissive="#c4a676" emissiveIntensity={0.6} />
             </mesh>
             <mesh position={[-0.77, 1.0, -0.017]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[0.02, 0.15, 0.001]} />
-              <meshStandardMaterial color="#764ba2" metalness={1} roughness={0} emissive="#764ba2" emissiveIntensity={0.6} />
+              <meshStandardMaterial color="#c4a676" metalness={1} roughness={0} emissive="#c4a676" emissiveIntensity={0.6} />
             </mesh>
             <mesh position={[0.72, 1.05, -0.017]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[0.15, 0.02, 0.001]} />
-              <meshStandardMaterial color="#764ba2" metalness={1} roughness={0} emissive="#764ba2" emissiveIntensity={0.6} />
+              <meshStandardMaterial color="#c4a676" metalness={1} roughness={0} emissive="#c4a676" emissiveIntensity={0.6} />
             </mesh>
             <mesh position={[0.77, 1.0, -0.017]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[0.02, 0.15, 0.001]} />
-              <meshStandardMaterial color="#764ba2" metalness={1} roughness={0} emissive="#764ba2" emissiveIntensity={0.6} />
+              <meshStandardMaterial color="#c4a676" metalness={1} roughness={0} emissive="#c4a676" emissiveIntensity={0.6} />
             </mesh>
             <mesh position={[-0.72, -1.05, -0.017]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[0.15, 0.02, 0.001]} />
-              <meshStandardMaterial color="#764ba2" metalness={1} roughness={0} emissive="#764ba2" emissiveIntensity={0.6} />
+              <meshStandardMaterial color="#c4a676" metalness={1} roughness={0} emissive="#c4a676" emissiveIntensity={0.6} />
             </mesh>
             <mesh position={[-0.77, -1.0, -0.017]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[0.02, 0.15, 0.001]} />
-              <meshStandardMaterial color="#764ba2" metalness={1} roughness={0} emissive="#764ba2" emissiveIntensity={0.6} />
+              <meshStandardMaterial color="#c4a676" metalness={1} roughness={0} emissive="#c4a676" emissiveIntensity={0.6} />
             </mesh>
             <mesh position={[0.72, -1.05, -0.017]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[0.15, 0.02, 0.001]} />
-              <meshStandardMaterial color="#764ba2" metalness={1} roughness={0} emissive="#764ba2" emissiveIntensity={0.6} />
+              <meshStandardMaterial color="#c4a676" metalness={1} roughness={0} emissive="#c4a676" emissiveIntensity={0.6} />
             </mesh>
             <mesh position={[0.77, -1.0, -0.017]} rotation={[0, Math.PI, 0]}>
               <boxGeometry args={[0.02, 0.15, 0.001]} />
-              <meshStandardMaterial color="#764ba2" metalness={1} roughness={0} emissive="#764ba2" emissiveIntensity={0.6} />
+              <meshStandardMaterial color="#c4a676" metalness={1} roughness={0} emissive="#c4a676" emissiveIntensity={0.6} />
             </mesh>
             
             {/* Clip/attachment holder on the back side */}
