@@ -302,7 +302,7 @@ export default function Lanyard({ position = [0, 0, 20], gravity = [0, -40, 0], 
         <div className="action-buttons">
           <button 
             className="action-btn primary cursor-target"
-            onClick={() => window.open('/portfolio', '_blank')}
+            onClick={() => window.open('https://jc-rose.vercel.app/', '_blank')}
           >
             <span>View Portfolio</span>
           </button>
