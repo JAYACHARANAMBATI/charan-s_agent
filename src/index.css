@@ -17,6 +17,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling on iOS */
+}
+
+html {
+  height: 100%;
+  height: 100dvh; /* Dynamic viewport height for mobile */
+  overflow-x: hidden;
 }
 
 a {
@@ -33,19 +40,31 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile browsers */
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  min-height: 100dvh;
   background-color: #000000;
   overflow: hidden;
+  /* Prevent rubber band scrolling on iOS */
+  overscroll-behavior: none;
+  /* Prevent text selection on mobile */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  /* Prevent tap highlighting on mobile */
+  -webkit-tap-highlight-color: transparent;
 }
 
 #root {
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 h1 {
