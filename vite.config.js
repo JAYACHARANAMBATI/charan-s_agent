@@ -8,7 +8,7 @@ export default defineConfig({
     // Development proxy (only for local development)
     proxy: {
       '/api': {
-        target: 'https://jay-chatbot-4.onrender.com',
+        target: 'https://jaychatbot-jayacharanambati418-286zm8j4.leapcell.dev/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false,
