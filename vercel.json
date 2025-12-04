@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://jaychatbot-jayacharanambati418-286zm8j4.leapcell.dev//$1"
+      "destination": "https://jaychatbot-jayacharanambati418-286zm8j4.leapcell.dev/$1"
     },
     {
       "source": "/api/chat",
