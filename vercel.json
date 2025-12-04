@@ -3,9 +3,30 @@
     {
       "source": "/api/(.*)",
       "destination": "https://jaychatbot-jayacharanambati418-286zm8j4.leapcell.dev//$1"
+    },
+    {
+      "source": "/api/chat",
+      "destination": "https://jaychatbot-jayacharanambati418-286zm8j4.leapcell.dev/chat"
     }
   ],
   "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [

@@ -46,7 +46,8 @@ export default function Lanyard({ position = [0, 0, 20], gravity = [0, -40, 0], 
     setIsTyping(true);
     
     try {
-      // Call the actual chatbot API via proxy
+      console.log('Sending request to /api/chat with query:', userQuery); // Debug log
+      
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
@@ -57,18 +58,24 @@ export default function Lanyard({ position = [0, 0, 20], gravity = [0, -40, 0], 
         })
       });
       
+      console.log('Response status:', response.status); // Debug log
+      
       if (!response.ok) {
-        throw new Error('Failed to get response from chatbot');
+        const errorText = await response.text();
+        console.error('Error response:', errorText);
+        throw new Error(`Failed to get response from chatbot: ${response.status}`);
       }
       
       const data = await response.json();
+      console.log('Response data:', data); // Debug log
+      
       const responseText = data.response || "Sorry, I couldn't process your request.";
       
       setIsTyping(false);
       const agentResponse = {
         id: Date.now() + 1,
         text: responseText,
-        displayText: "", // Text being displayed during typing
+        displayText: "", 
         sender: "agent",
         timestamp: new Date(),
         isTyping: true // Mark as typing to trigger animation
@@ -84,7 +91,7 @@ export default function Lanyard({ position = [0, 0, 20], gravity = [0, -40, 0], 
       // Show error message to user
       const errorResponse = {
         id: Date.now() + 1,
-        text: "Sorry, I'm having trouble connecting. Please try again later.",
+        text: `Sorry, I'm having trouble connecting: ${error.message}`,
         displayText: "",
         sender: "agent",
         timestamp: new Date(),
